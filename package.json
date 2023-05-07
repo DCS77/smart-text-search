@@ -1,6 +1,6 @@
 {
-  "name": "@dcs77/smart-text-search",
-  "version": "1.0.0",
+  "name": "@pdfnav/smart-text-search",
+  "version": "1.0.1",
   "description": "Search some text and receive a search score using configurable parameters",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

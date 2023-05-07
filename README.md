@@ -5,7 +5,7 @@ Search some text and receive a search score using configurable parameters.
 ## Usage
 
 ```js
-import { search, SearchOptions } from "smart-text-search";
+import { search, SearchOptions } from "@pdfnav/smart-text-search";
 const query = "quick fox";
 const body = "The quick brown fox jumps over the lazy dog";
 
