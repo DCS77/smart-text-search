@@ -1,13 +1,32 @@
 {
   "name": "@pdfnav/smart-text-search",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Search some text and receive a search score using configurable parameters",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "./src/index.js",
   "scripts": {
     "build": "tsc"
   },
   "author": "Daniel Smit",
   "license": "ISC",
-  "devDependencies": {}
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DCS77/smart-text-search"
+  },
+  "keywords": [
+    "smart-text-search",
+    "search",
+    "text",
+    "string",
+    "score",
+    "fuzzy"
+  ],
+  "homepage": "https://pdfnav.com",
+  "bugs": "https://github.com/DCS77/smart-text-search/issues",
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": "^12.22.0 || ^14.17.0 || >=16.0.0"
+  }
 }
