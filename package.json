@@ -1,0 +1,13 @@
+{
+  "name": "@dcs77/smart-text-search",
+  "version": "1.0.0",
+  "description": "Search some text and receive a search score using configurable parameters",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "author": "Daniel Smit",
+  "license": "ISC",
+  "devDependencies": {}
+}
