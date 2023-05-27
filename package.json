@@ -1,6 +1,6 @@
 {
   "name": "@pdfnav/smart-text-search",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Search some text and receive a search score using configurable parameters",
   "main": "./dist/index.js",
   "files": [
@@ -31,6 +31,6 @@
     "access": "public"
   },
   "engines": {
-    "node": "^12.22.0 || ^14.17.0 || >=16.0.0"
+    "node": ">=12.0.0"
   }
 }
