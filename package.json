@@ -1,6 +1,6 @@
 {
   "name": "@pdfnav/smart-text-search",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Search some text and receive a search score using configurable parameters",
   "main": "./dist/index.js",
   "files": [
@@ -15,7 +15,7 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "https://github.com/DCS77/smart-text-search"
+    "url": "https://github.com/DCS77/smart-text-search.git"
   },
   "keywords": [
     "smart-text-search",
