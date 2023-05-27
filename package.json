@@ -1,8 +1,12 @@
 {
   "name": "@pdfnav/smart-text-search",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "description": "Search some text and receive a search score using configurable parameters",
-  "main": "./src/index.js",
+  "main": "./dist/index.js",
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
     "build": "tsc"
   },
