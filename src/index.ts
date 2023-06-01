@@ -1,8 +1,3 @@
-export interface SearchText {
-  query: string; // search query
-  body: string; // body of text to search through
-}
-
 export interface SearchOptions {
   // points to apply upon finding an exact match with body
   exactMatchPoints: number;
@@ -32,6 +27,12 @@ export interface SearchOptions {
   shouldMatchWhitespaceAndPunctuation: boolean;
   // replace consecutive whitespace with a single space
   shouldCollapseWhitespace: boolean;
+}
+
+export interface SearchInputs {
+  query: string; // search query
+  body: string; // body of text to search through
+  options?: Partial<SearchOptions>; // custom option overrides
 }
 
 const defaultSearchOptions: SearchOptions = {
@@ -213,10 +214,7 @@ function getConfiguredText(
   return text;
 }
 
-export function search(
-  searchText: SearchText,
-  options: SearchOptions = defaultSearchOptions
-): number {
+export function search({ query, body, options }: SearchInputs): number {
   const {
     exactMatchPoints,
     exactContainingMatchPoints,
@@ -232,39 +230,45 @@ export function search(
     shouldMatchPunctuation,
     shouldMatchWhitespaceAndPunctuation,
     shouldCollapseWhitespace,
-  } = options;
+  } = {
+    ...defaultSearchOptions,
+    ...options,
+  };
 
   let score = 0;
 
-  const query = getConfiguredText(
-    searchText.query,
+  const formattedQuery = getConfiguredText(
+    query,
     isCaseSensitive,
     shouldMatchPunctuation,
     shouldCollapseWhitespace
   );
-  const body = getConfiguredText(
-    searchText.body,
+
+  const formattedBody = getConfiguredText(
+    body,
     isCaseSensitive,
     shouldMatchPunctuation,
     shouldCollapseWhitespace
   );
 
   if (exactMatchPoints !== 0) {
-    score += exactMatchPoints * getExactMatchScore(query, body);
+    score +=
+      exactMatchPoints * getExactMatchScore(formattedQuery, formattedBody);
   }
 
   if (exactContainingMatchPoints !== 0) {
     score +=
-      exactContainingMatchPoints * getExactContainingMatchScore(query, body);
+      exactContainingMatchPoints *
+      getExactContainingMatchScore(formattedQuery, formattedBody);
   }
 
   const queryWords = getWords(
-    query,
+    formattedQuery,
     shouldMatchWhitespaceAndPunctuation,
     shouldMatchPunctuation
   );
   const bodyWords = getWords(
-    body,
+    formattedBody,
     shouldMatchWhitespaceAndPunctuation,
     shouldMatchPunctuation
   );
