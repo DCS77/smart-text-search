@@ -2,6 +2,14 @@
 
 Search some text and receive a search score using configurable parameters.
 
+## Installation
+
+This package is available on npm [here](https://www.npmjs.com/package/@pdfnav/smart-text-search).
+
+```
+npm install @pdfnav/smart-text-search
+```
+
 ## Usage
 
 ```js
